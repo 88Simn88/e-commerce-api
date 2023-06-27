@@ -1,15 +1,19 @@
 const { getAll, create, remove, update } = require('../controllers/user.controllers');
 const express = require('express');
+const verifyJWT = require("../utils/verifyJWT")
 
 const routerUser = express.Router();
 
 routerUser.route('/')
-    .get(getAll)
+    .get(verifyJWT, getAll)
     .post(create);
 
+routerUser.route('/login')
+    .post(login)
+
 routerUser.route('/:id')
-    .get(getOne)
-    .delete(remove)
-    .put(update);
+    
+    .delete(verifyJWT, remove)
+    .put(verifyJWT, update);
 
 module.exports = routerUser;
