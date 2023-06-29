@@ -41,7 +41,7 @@ const login = catchError(async(req, res) =>{
 
     if(!isValidPassword)return res.sendStatus(401)
 
-    const token = jwt.sing(
+    const token = jwt.sign(
         {user},
         process.env.TOKEN_SECRET,
         {expiresIn:"1d"}
@@ -54,5 +54,6 @@ module.exports = {
     getAll,
     create,
     remove,
-    update
+    update,
+    login
 }

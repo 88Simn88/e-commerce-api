@@ -6,7 +6,7 @@ const user = async ()=>{
         firstName: "Agustín",
         lastName: "Seoane",
         email: "agustin@gmail.com",
-        password: "agus1234",
+        password: "agustin1234",
         phone: "1234567890"
     }
 
