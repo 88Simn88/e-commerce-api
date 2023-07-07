@@ -76,10 +76,7 @@ async()=>{
         .put(`${URL_BASE}/${cartId}`)
         .send(cartBody)
         .set("Authorization", `Bearer ${TOKEN}`)
-    console.log(URL_BASE)
-    console.log(res.body)
-    console.log(cartId)    
-    console.log(TOKEN)
+   
     expect(res.status).toBe(200)
     expect(res.body.quantity).toBe(cartBody.quantity)
 })
